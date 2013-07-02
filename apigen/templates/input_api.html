@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<HTML>
+<HEAD>
+<TITLE>APIGEN</TITLE>
+</HEAD>
+<BODY>
+	<h1> <u> APIGEN</u> </h1>
+
+	<div>
+		Input API Information.	
+	</div>
+	<form id='inputApiForm' action='/api/do_input_example' method='POST'>{% csrf_token %}
+		<div>
+			<input type="text" value="" name="apiExample"/>
+		</div>
+		<div>
+			<input type="submit" value="Done!" />
+		</div>
+	</form>
+</BODY>
+</HTML> 
