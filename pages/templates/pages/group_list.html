@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<script src='{% static "bootstrap/js/bootstrap.js" %}' type="text/javascript"></script>
+<link rel="stylesheet" href="{% static "bootstrap/css/bootstrap.min.css" %}">
+<link rel="stylesheet" href="{% static "bootstrap/css/bootstrap-theme.min.css" %}">
+
+<title> API GEN</title>
+
+</head>
+
+<body>
+<div class="container">
+	<div class="page-header">
+		<h1>그룹 리스트</h1>
+	</div>
+	<div class='lead'>
+		프로젝트: {{ project.title }}
+	</div>
+	{% if group_list %}
+		<ul>
+		{% for group in group_list%}
+			<li><a href="/page/apilist/{{ group.id }}/">{{ group.title}}</a></li>
+		{% endfor %}
+		</ul>
+	{% else %}
+		<p>No Group.</p>
+	{% endif %}
+		
+</div>
+
+</body>
+</html>
