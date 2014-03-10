@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<script src='{% static "bootstrap/js/bootstrap.js" %}' type="text/javascript"></script>
+<link rel="stylesheet" href="{% static "bootstrap/css/bootstrap.min.css" %}">
+<link rel="stylesheet" href="{% static "bootstrap/css/bootstrap-theme.min.css" %}">
+
+<title> API GEN</title>
+
+</head>
+
+<div class="container">
+	<div class="page-header">
+		<h1>{{ apidoc.name }}</h1>
+	</div>
+	<table class="table">
+		<tr>
+			<td>URL</td>
+			<td>{{ apidoc.url}}</td>
+		</tr>				
+		<tr>
+			<td>PARAM</td>
+			<td>{{ apidoc.param}}</td>
+		</tr>				
+		<tr>
+			<td>METHOD</td>
+			<td>{{ apidoc.method}}</td>
+		</tr>				
+		<tr>
+			<td>DESCRIPTION</td>
+			<td>{{ apidoc.html_desc | safe}}</td>
+		</tr>				
+		<tr>
+			<td>Request Example</td>
+			<td>{{ apidoc.request}}</td>
+		</tr>				
+		<tr>
+			<td>Response Example</td>
+			<td>{{ apidoc.html_response | safe}}</td>
+		</tr>				
+	</table>		
+</div>
+
+<script src="http://code.jquery.com/jquery-latest.js" type="text/javascript"></script>
+
+</body>
+</html>
+
+
