@@ -15,22 +15,6 @@ class IndexView(generic.ListView):
 		return Project.objects.order_by('-create_dt')[:5]
 
 
-class GroupListView(generic.ListView):
-#	template_name = 'pages/group_list.html'
-#	context_object_name = 'group_list'
-#
-#	def get_queryset(self):
-#		group_list = Group.objects.filter(project_id = project_id)
-#		return group_list 
-
-	def get(self, request, project_id):
-		group_list = Group.objects.filter(project_id = project_id)
-		project  = Project.objects.filter(id = project_id)
-		context = {'group_list': group_list,
-					'project': project[0]}
-		return render(request, 'pages/group_list.html', context)
-
-
 class ApiListView(generic.View):
 
 	def get(self, request, group_id):
